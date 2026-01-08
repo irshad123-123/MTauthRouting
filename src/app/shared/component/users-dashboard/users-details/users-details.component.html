@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+            <p class="badge badge-warning">{{userObj.userRole}}</p>
+            <h2>Name : {{userObj.fname}} {{userObj.lname}}</h2>
+            <h2>Email : {{userObj.email}}</h2>
+            <h2>Contact : {{userObj.contact}}</h2>
+            <button [routerLink]="['edit']" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="onRemove()" mat-mini-fab color="warn" aria-label="Example icon button with a menu icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+        </div>
+        <div class="col-md-6">
+            <img class="rounded" [src]="userObj.imgUrl">
+        </div>
+        </div>
+        
+    </div>
+</div>

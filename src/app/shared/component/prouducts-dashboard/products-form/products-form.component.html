@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <form #formRef="ngForm" (ngSubmit)="onAddProd()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" id="name" name="name" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">ImageUrl</label>
+                <input class="form-control" id="imageUrl" name="imageUrl" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" ngModel required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input class="form-control" id="category" name="category" ngModel required>
+            </div>
+            <button *ngIf="!isInEditMode" class="btn-block" type="submit" mat-raised-button color="primary">Add Products</button>
+            <button (click)="onUpdate()" *ngIf="isInEditMode" class="btn-block" type="button" mat-raised-button color="primary">Update Products</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-6">
+        <img [src]="prodObj.imageUrl">
+    </div>
+    <div class="col-md-6">
+        <strong>{{prodObj.name}}</strong>
+        <p>{{prodObj.price}}</p>
+        <p>{{prodObj.category}}</p>
+        <p>{{prodObj.description}}</p>
+        <div>
+             <button [routerLink]="['edit']" class="mr-2" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button (click)="onRemove()" mat-mini-fab color="warn" aria-label="Example icon button with a menu icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+        </div>
+    </div>
+</div>

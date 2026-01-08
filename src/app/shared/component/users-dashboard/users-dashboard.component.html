@@ -1,0 +1,14 @@
+<div class="col-md-2 offset-md-10">
+    <button routerLink="addUser" class="mb-2" mat-raised-button color="primary">+ Add Users</button>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <app-users-card
+         *ngFor="let user of userArr"
+        [userObj]="user"
+        ></app-users-card>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

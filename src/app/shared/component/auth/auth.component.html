@@ -1,0 +1,50 @@
+<div class="parent">
+    <div class="card" *ngIf="!isAreadyAccount">
+        <div class="card-body">
+            <form #login="ngForm" (ngSubmit)="onLogin()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" ngModel required>
+                </div>
+                 <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" ngModel required>
+                </div>
+                <button class="btn-block" mat-raised-button color="primary">Login</button>
+                <p class="mt-2">Don't have an account ? <a (click)="isAreadyAccount = true" href="javascript:;">SignUp</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="card" *ngIf="isAreadyAccount">
+        <div class="card-body">
+            <form #signUp="ngForm" (ngSubmit)="onSignUp()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" ngModel required>
+                </div>
+                 <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" class="form-control" name="password" ngModel required>
+                </div>
+                <div class="form-group">
+                    <label for="userRole">userRole</label>
+                    <select class="form-control" name="userRole" ngModel required>
+                        <option value="admin">Admin</option>
+                        <option value="buyer">buyer</option>
+                        <option value="superAdmin">Super Admin</option>
+                    </select>
+                </div>
+                <button class="btn-block" mat-raised-button color="primary">Login</button>
+                <p class="mt-2">Already have an account ? <a (click)="isAreadyAccount = false" href="javascript:;">Login</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<mat-spinner
+class="loader"
+diameter="40"
+*ngIf="isLoading"
+></mat-spinner>
+

@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-end">
+    <button class="mb-2" [routerLink]="['addProd',prodArr[0].id]" mat-raised-button color="primary">Add Products</button>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div 
+        routerLinkActive="show"
+        class="card mb-3" role="button" [routerLink]="[prod.id]" *ngFor="let prod of prodArr">
+            <div class="card-body">
+               <div class="row">
+                <div class="col-md-6">
+                     <img [src]="prod.imageUrl">
+                </div>
+                <div class="col-md-6">
+                    <strong>{{prod.name}}</strong>
+                    <p>{{prod.price}}</p>
+                    <p>{{prod.category}}</p>
+                    <p>{{prod.description}}</p>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

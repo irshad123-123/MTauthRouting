@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li 
+            [routerLinkActiveOptions]="{exact : true}"
+            routerLinkActive="show"
+            role="button"
+            [routerLink]="fair.fairId"
+            class="list-group-item bg-info info mb-2 rounded" *ngFor="let fair of fairArr">
+                  <strong>{{fair.fairName}}</strong>
+        <div class="para rounded">
+            <p class="mb-0 mt-2">Date : {{(fair.startDate)*1000 | date}}</p>
+        <p class="mb-0">Type : {{fair.type}}</p>
+        </div>
+
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>
