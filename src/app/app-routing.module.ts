@@ -80,10 +80,10 @@ const routes: Routes = [
     path : 'page-not-found',
     component : PageNotFoundComponent
   },
-  // {
-  //   path : '**',
-  //   redirectTo : 'page-not-found'
-  // }
+  {
+    path : '**',
+    redirectTo : 'page-not-found'
+  }
 
 ];
 
